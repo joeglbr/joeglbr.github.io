@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>汤不热官网-热门话题讨论社区与即时交流平台</title>
+    <meta name="description" content="汤不热官网提供即时的话题讨论、兴趣社区和匿名交流服务。用户可以关注感兴趣的标签，参与热门话题，分享观点，获取最新的网络资讯与娱乐动态。">
+    <meta name="keywords" content="汤不热,汤不热官网,问答社区,社交网络,热点话题,兴趣社区">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff5c5c;
+            --primary-hover: #ff4242;
+            --bg-body: #f7f7f7;
+            --bg-card: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --text-light: #999999;
+            --border-color: #e5e5e5;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .flex-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .grid-layout {
+            display: grid;
+            gap: 24px;
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-inner {
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -22px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 40px 0;
+        }
+
+        .hero-card {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            border-radius: var(--radius-lg);
+            padding: 48px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 36px;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero-desc {
+            font-size: 16px;
+            margin-bottom: 32px;
+            opacity: 0.95;
+        }
+
+        .hero-image-placeholder {
+            width: 300px;
+            height: 200px;
+            background-color: rgba(255,255,255,0.3);
+            border-radius: var(--radius-md);
+            position: relative;
+        }
+
+        .hero-image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+        }
+
+        /* Main Content Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 280px;
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        /* Feed Section */
+        .feed-header {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            position: relative;
+            padding-left: 12px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            bottom: 4px;
+            width: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .feed-filters {
+            display: flex;
+            gap: 16px;
+        }
+
+        .filter-item {
+            font-size: 14px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding-bottom: 2px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .filter-item.active {
+            color: var(--text-main);
+            border-bottom-color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .post-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .post-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--border-color);
+        }
+
+        .post-header {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #eee;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .post-info h4 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .post-meta {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        .post-content {
+            font-size: 15px;
+            color: var(--text-main);
+            margin-bottom: 16px;
+            white-space: pre-wrap;
+        }
+
+        .post-tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .tag {
+            font-size: 12px;
+            padding: 4px 10px;
+            background-color: #f0f0f0;
+            border-radius: 12px;
+            color: var(--text-secondary);
+        }
+
+        .post-actions {
+            display: flex;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 12px;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .action-btn:hover {
+            background-color: #f5f5f5;
+            color: var(--text-main);
+        }
+
+        .action-btn.liked {
+            color: var(--primary-color);
+        }
+
+        /* Sidebar */
+        .sidebar-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .sidebar-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .trend-list li {
+            margin-bottom: 16px;
+        }
+
+        .trend-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .trend-rank {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-light);
+            width: 20px;
+        }
+
+        .trend-content h5 {
+            font-size: 14px;
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+
+        .trend-content p {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        .hot-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .hot-tag {
+            font-size: 13px;
+            color: var(--text-main);
+            background: #f9f9f9;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .hot-tag:hover {
+            background: #eee;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #fff;
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0 20px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h5 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                order: -1; /* Sidebar on top for mobile */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 32px 20px;
+            }
+            .hero-title {
+                font-size: 28px;
+            }
+            .hero-image-placeholder {
+                width: 100%;
+                height: 150px;
+                margin-top: 24px;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#ff5c5c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="#ff5c5c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="#ff5c5c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>汤不热官网</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">推荐</a>
+                <a href="#">娱乐</a>
+                <a href="#">科技</a>
+                <a href="#">生活</a>
+                <a href="#">问答</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">注册</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="container hero">
+            <div class="hero-card">
+                <div class="hero-content">
+                    <h1 class="hero-title">发现你的兴趣，连接每一个话题</h1>
+                    <p class="hero-desc">加入全球最大的即时兴趣社区。在这里，你可以找到志同道合的伙伴，分享观点，参与讨论，探索无限可能。</p>
+                    <button class="btn" style="background: white; color: var(--primary-color);">开始探索</button>
+                </div>
+                <div class="hero-image-placeholder"></div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="container main-grid">
+            <!-- Feed Column -->
+            <section class="feed-column">
+                <div class="feed-header">
+                    <h2 class="section-title">热门动态</h2>
+                    <div class="feed-filters">
+                        <span class="filter-item active">综合</span>
+                        <span class="filter-item">最新</span>
+                        <span class="filter-item">精华</span>
+                        <span class="filter-item">关注</span>
+                    </div>
+                </div>
+
+                <!-- Post 1 -->
+                <article class="post-card">
+                    <div class="post-header">
+                        <div class="avatar">
+                            <img src="https://picsum.photos/seed/user1/100/100" alt="User Avatar">
+                        </div>
+                        <div class="post-info">
+                            <h4>科技观察者</h4>
+                            <div class="post-meta">2小时前 · 科技话题</div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        最近关于人工智能的讨论非常热烈，大家觉得未来的AI助手会完全改变我们的工作方式吗？我觉得效率会大幅提升，但也可能带来一些新的挑战。欢迎在评论区分享你的看法！
+                    </div>
+                    <div class="post-tags">
+                        <span class="tag">#人工智能</span>
+                        <span class="tag">#科技趋势</span>
+                        <span class="tag">#未来生活</span>
+                    </div>
+                    <div class="post-actions">
+                        <div class="action-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+                            128
+                        </div>
+                        <div class="action-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                            42
+                        </div>
+                        <div class="action-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                            分享
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="post-card">
+                    <div class="post-header">
+                        <div class="avatar">
+                            <img src="https://picsum.photos/seed/user2/100/100" alt="User Avatar">
+                        </div>
+                        <div class="post-info">
+                            <h4>生活小能手</h4>
+                            <div class="post-meta">5小时前 · 生活妙招</div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        分享一个最近发现的厨房收纳技巧，把调料瓶都竖着放，不仅节省空间，而且找起来特别方便。附上我的改造前后对比图。
+                    </div>
+                    <div class="post-tags">
+                        <span class="tag">#家居收纳</span>
+                        <span class="tag">#生活技巧</span>
+                    </div>
+                    <div class="post-actions">
+                        <div class="action-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+                            356
+                        </div>
+                        <div class="action-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                            89
+                        </div>
+                        <div class="action-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                            分享
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="post-card">
+                    <div class="post-header">
+                        <div class="avatar">
+                            <img src="https://picsum.photos/seed/user3/100/100" alt="User Avatar">
+                        </div>
+                        <div class="post-info">
+                            <h4>电影发烧友</h4>
+                            <div class="post-meta">昨天 · 影视评论</div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        刚看完这部新上映的悬疑片，剧情反转非常精彩，演员演技在线，强烈推荐给喜欢推理的观众。最后的结局真的让人意想不到！
+                    </div>
+                    <div class="post-tags">
+                        <span class="tag">#悬疑电影</span>
+                        <span class="tag">#周末推荐</span>
+                    </div>
+                    <div class="post-actions">
+                        <div class="action-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+                            521
+                        </div>
+                        <div class="action-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                            120
+                        </div>
+                        <div class="action-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                            分享
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Load More -->
+                <div style="text-align: center; margin-top: 24px;">
+                    <button class="btn btn-outline" style="width: 100%; max-width: 200px;">加载更多</button>
+                </div>
+            </section>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Trending Widget -->
+                <div class="sidebar-card">
+                    <div class="sidebar-title">
+                        <span>实时热榜</span>
+                        <a href="#" style="font-size: 12px; color: var(--primary-color);">更多</a>
+                    </div>
+                    <ul class="trend-list">
+                        <li class="trend-item">
+                            <span class="trend-rank">1</span>
+                            <div class="trend-content">
+                                <h5>2024年最值得期待的游戏发布</h5>
+                                <p>2.4万讨论</p>
+                            </div>
+                        </li>
+                        <li class="trend-item">
+                            <span class="trend-rank">2</span>
+                            <div class="trend-content">
+                                <h5>如何高效学习编程语言</h5>
+                                <p>1.8万讨论</p>
+                            </div>
+                        </li>
+                        <li class="trend-item">
+                            <span class="trend-rank">3</span>
+                            <div class="trend-content">
+                                <h5>周末去哪里露营比较好</h5>
+                                <p>9500讨论</p>
+                            </div>
+                        </li>
+                        <li class="trend-item">
+                            <span class="trend-rank">4</span>
+                            <div class="trend-content">
+                                <h5>极简主义生活方式分享</h5>
+                                <p>7200讨论</p>
+                            </div>
+                        </li>
+                        <li class="trend-item">
+                            <span class="trend-rank">5</span>
+                            <div class="trend-content">
+                                <h5>新出的手机摄影技巧</h5>
+                                <p>6100讨论</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Hot Tags Widget -->
+                <div class="sidebar-card">
+                    <div class="sidebar-title">
+                        <span>热门话题</span>
+                    </div>
+                    <div class="hot-tags">
+                        <a href="#" class="hot-tag">#数码测评</a>
+                        <a href="#" class="hot-tag">#美食探店</a>
+                        <a href="#" class="hot-tag">#健身打卡</a>
+                        <a href="#" class="hot-tag">#读书笔记</a>
+                        <a href="#" class="hot-tag">#旅游攻略</a>
+                        <a href="#" class="hot-tag">#职场经验</a>
+                        <a href="#" class="hot-tag">#情感咨询</a>
+                        <a href="#" class="hot-tag">#萌宠日常</a>
+                    </div>
+                </div>
+
+                <!-- Download App Widget -->
+                <div class="sidebar-card" style="background: #ff5c5c; color: white;">
+                    <div class="sidebar-title" style="color: white;">
+                        <span>下载 APP</span>
+                    </div>
+                    <p style="font-size: 13px; margin-bottom: 16px; opacity: 0.9;">随时随地，发现新鲜事</p>
+                    <button class="btn" style="background: white; color: var(--primary-color); width: 100%;">立即下载</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="margin-bottom: 16px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#ff5c5c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="#ff5c5c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="#ff5c5c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="color: var(--text-main);">汤不热官网</span>
+                    </a>
+                    <p>汤不热是一个基于兴趣的即时交流社区，致力于为用户提供轻松、真实、有价值的网络社交体验。</p>
+                    <p>© 2024 汤不热社区 版权所有</p>
+                </div>
+                <div class="footer-col">
+                    <h5>关于我们</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">公司简介</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>帮助中心</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">社区规范</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>关注我们</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">官方博客</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                本站为演示页面，所有内容仅供参考。
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple interaction for filter buttons
+        document.querySelectorAll('.filter-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.filter-item').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Simple interaction for action buttons (like simulation)
+        document.querySelectorAll('.action-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const svg = this.querySelector('svg');
+                if (svg && svg.getAttribute('fill') === 'none') {
+                    svg.setAttribute('fill', 'currentColor');
+                    this.classList.add('liked');
+                    // Count increment logic would go here in a real app
+                } else if (svg) {
+                    svg.setAttribute('fill', 'none');
+                    this.classList.remove('liked');
+                }
+            });
+        });
+    </script>
+</body>
+                                           </html>
