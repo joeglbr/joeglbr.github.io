@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>香港电视剧大全 - 经典港剧回顾与最新热播指南</title>
+    <meta name="description" content="本站提供详尽的香港电视剧大全，涵盖金庸武侠、TVB经典剧集、无线翡翠台及亚视高口碑作品。包含剧情简介、播出时间、演员阵容及高清观看指南，是港剧爱好者的首选收藏站。">
+    <meta name="keywords" content="香港电视剧大全,TVB剧集,港剧推荐,金庸武侠剧,经典老港剧,亚视剧集,香港影视">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #C41230; /* TVB Red */
+            --secondary-color: #2D2D2D; /* Dark Grey */
+            --accent-color: #FFB800; /* Gold */
+            --bg-color: #F9F9F9;
+            --card-bg: #FFFFFF;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--secondary-color);
+            font-size: 1rem;
+        }
+
+        nav a.active, nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: #f0f0f0;
+            border-radius: 20px;
+            padding: 4px 12px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 4px;
+            font-size: 0.9rem;
+            width: 150px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2D2D2D 0%, #1a1a1a 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.1);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px var(--spacing-unit);
+        }
+
+        /* Section Titles */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 24px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 16px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .section-more {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Grid Layouts */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .card-img-wrapper {
+            position: relative;
+            padding-top: 140%; /* 5:7 Aspect Ratio */
+            overflow: hidden;
+            background-color: #eee;
+        }
+
+        .card-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .card:hover .card-img {
+            transform: scale(1.05);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .card-content {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 16px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            border-top: 1px solid #eee;
+            padding-top: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background-color: #a00d26;
+        }
+
+        /* Categories Section */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .category-item {
+            background: white;
+            padding: 24px;
+            text-align: center;
+            border-radius: var(--border-radius);
+            border: 1px solid #eee;
+            transition: all 0.2s;
+        }
+
+        .category-item:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(196, 18, 48, 0.1);
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .category-name {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            margin-top: 40px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            padding-left: 24px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #aaa;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 12px;
+            }
+            nav {
+                width: 100%;
+                margin-top: 12px;
+                overflow-x: auto;
+            }
+            nav ul {
+                gap: 16px;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .search-box {
+                display: none; /* Simplify for mobile */
+            }
+        }
+        @media (max-width: 480px) {
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <a href="#" class="logo">
+            <span>📺</span> 香港电视剧大全
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#tvb">TVB剧集</a></li>
+                <li><a href="#classic">经典老剧</a></li>
+                <li><a href="#category">分类浏览</a></li>
+                <li><a href="#faq">观看指南</a></li>
+            </ul>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="搜索剧集名称...">
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container" style="padding: 0;">
+        <h1>重温经典，探索港剧魅力</h1>
+        <p>汇集金庸武侠、刑侦警匪、豪门恩怨等题材，为您整理最全的香港电视剧资源库。</p>
+        <div class="hero-tags">
+            <span class="tag">#TVB经典</span>
+            <span class="tag">#金庸武侠</span>
+            <span class="tag">#刑侦警匪</span>
+            <span class="tag">#商战大戏</span>
+            <span class="tag">#TVB台庆剧</span>
+        </div>
+    </div>
+</section>
+
+<main class="container">
+    
+    <!-- Categories -->
+    <section id="category">
+        <div class="section-header">
+            <h2 class="section-title">热门分类</h2>
+            <a href="#" class="section-more">查看全部 &rarr;</a>
+        </div>
+        <div class="category-grid">
+            <div class="category-item">
+                <span class="category-icon">⚔️</span>
+                <div class="category-name">金庸武侠</div>
+            </div>
+            <div class="category-item">
+                <span class="category-icon">🕵️</span>
+                <div class="category-name">刑侦警匪</div>
+            </div>
+            <div class="category-item">
+                <span class="category-icon">🏥</span>
+                <div class="category-name">医疗剧</div>
+            </div>
+            <div class="category-item">
+                <span class="category-icon">💼</span>
+                <div class="category-name">商战职场</div>
+            </div>
+            <div class="category-item">
+                <span class="category-icon">🏰</span>
+                <div class="category-name">家族恩怨</div>
+            </div>
+            <div class="category-item">
+                <span class="category-icon">🕰️</span>
+                <div class="category-name">穿越时空</div>
+            </div>
+            <div class="category-item">
+                <span class="category-icon">🎭</span>
+                <div class="category-name">时装喜剧</div>
+            </div>
+            <div class="category-item">
+                <span class="category-icon">🇭🇰</span>
+                <div class="category-name">本地生活</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TVB Highlights -->
+    <section id="tvb">
+        <div class="section-header">
+            <h2 class="section-title">TVB 精选剧集</h2>
+            <a href="#" class="section-more">TVB剧场 &rarr;</a>
+        </div>
+        <div class="grid-4">
+            <!-- Card 1 -->
+            <article class="card">
+                <div class="card-img-wrapper">
+                    <span class="card-badge">台庆剧</span>
+                    <img src="https://picsum.photos/seed/tvb1/300/420" alt="新闻女王海报" class="card-img">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">新闻女王</h3>
+                    <div class="card-meta">
+                        <span>2022</span>
+                        <span>24集</span>
+                    </div>
+                    <p class="card-desc">讲述传媒界两代新闻主播之间的权力斗争，剧情紧凑，演技炸裂。</p>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">查看详情</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card">
+                <div class="card-img-wrapper">
+                    <span class="card-badge">热播</span>
+                    <img src="https://picsum.photos/seed/tvb2/300/420" alt="法证先锋4海报" class="card-img">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">法证先锋4</h3>
+                    <div class="card-meta">
+                        <span>2021</span>
+                        <span>28集</span>
+                    </div>
+                    <p class="card-desc">法证团队携手破获多起离奇案件，展现科学鉴证与人性博弈。</p>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">查看详情</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card">
+                <div class="card-img-wrapper">
+                    <span class="card-badge">怀旧</span>
+                    <img src="https://picsum.photos/seed/tvb3/300/420" alt="金宵大厦海报" class="card-img">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">金宵大厦</h3>
+                    <div class="card-meta">
+                        <span>2019</span>
+                        <span>20集</span>
+                    </div>
+                    <p class="card-desc">双线叙事讲述金宵大厦内两代人的爱恨情仇，悬疑与爱情交织。</p>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">查看详情</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="card">
+                <div class="card-img-wrapper">
+                    <span class="card-badge">高分</span>
+                    <img src="https://picsum.photos/seed/tvb4/300/420" alt="白色强人海报" class="card-img">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">白色强人</h3>
+                    <div class="card-meta">
+                        <span>2020</span>
+                        <span>28集</span>
+                    </div>
+                    <p class="card-desc">以香港四大专业为背景，讲述医者仁心与商战智慧的故事。</p>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">查看详情</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Classic Oldies -->
+    <section id="classic" style="margin-top: 60px;">
+        <div class="section-header">
+            <h2 class="section-title">经典老港剧</h2>
+            <a href="#" class="section-more">怀旧专区 &rarr;</a>
+        </div>
+        <div class="grid-4">
+            <!-- Card 5 -->
+            <article class="card">
+                <div class="card-img-wrapper">
+                    <span class="card-badge">必看</span>
+                    <img src="https://picsum.photos/seed/old1/300/420" alt="天龙八部海报" class="card-img">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">天龙八部 (2003版)</h3>
+                    <div class="card-meta">
+                        <span>2003</span>
+                        <span>50集</span>
+                    </div>
+                    <p class="card-desc">黄日华版金庸武侠巅峰之作，气势恢宏，人物刻画入木三分。</p>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">查看详情</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="card">
+                <div class="card-img-wrapper">
+                    <span class="card-badge">神作</span>
+                    <img src="https://picsum.photos/seed/old2/300/420" alt="大时代海报" class="card-img">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">大时代</h3>
+                    <div class="card-meta">
+                        <span>1992</span>
+                        <span>50集</span>
+                    </div>
+                    <p class="card-desc">方展博与丁蟹的商战对决，探讨人性贪婪与命运无常的经典之作。</p>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">查看详情</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 7 -->
+            <article class="card">
+                <div class="card-img-wrapper">
+                    <span class="card-badge">经典</span>
+                    <img src="https://picsum.photos/seed/old3/300/420" alt="创世纪海报" class="card-img">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">创世纪</h3>
+                    <div class="card-meta">
+                        <span>1999</span>
+                        <span>100集</span>
+                    </div>
+                    <p class="card-desc">讲述叶孝忠与叶天养两兄弟在商海浮沉的家族史诗。</p>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">查看详情</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 8 -->
+            <article class="card">
+                <div class="card-img-wrapper">
+                    <span class="card-badge">经典</span>
+                    <img src="https://picsum.photos/seed/old4/300/420" alt="鉴证实录海报" class="card-img">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">鉴证实录</h3>
+                    <div class="card-meta">
+                        <span>1996</span>
+                        <span>20集</span>
+                    </div>
+                    <p class="card-desc">开创TVB刑侦剧先河，科学破案与浪漫爱情并存。</p>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">查看详情</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="section-header" style="border:none; padding:0;">
+            <h2 class="section-title">观看指南与常见问题</h2>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">香港电视剧一般在哪个电视台播出？</div>
+            <div class="faq-answer">目前香港主流的免费电视广播机构是香港电视广播有限公司（TVB，无线电视）和亚洲电视（ATV，亚视）。此外，还有收费电视频道如ViuTV等。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">哪里可以在线观看高清的香港电视剧？</div>
+            <div class="faq-answer">本站收录了大量高清正版资源链接，支持在线播放。您也可以通过各大视频平台（如优酷、爱奇艺、腾讯视频）搜索剧集名称查看正版授权内容。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">TVB剧集的播放时长通常是多久？</div>
+            <div class="faq-answer">一部标准的TVB电视剧通常为20集至30集左右，每集时长约为45分钟至48分钟（含广告）。部分大型台庆剧或史诗剧可能会达到50集甚至100集以上。</div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>关于本站</h4>
+            <p style="font-size: 0.9rem; line-height: 1.6;">香港电视剧大全致力于为港剧爱好者提供一个资源丰富、分类清晰的在线观看平台。我们整理了从经典老剧到最新热播的TVB剧集，方便您随时重温经典。</p>
+        </div>
+        <div class="footer-col">
+            <h4>快速导航</h4>
+            <ul>
+                <li><a href="#">TVB剧集</a></li>
+                <li><a href="#">亚视剧集</a></li>
+                <li><a href="#">金庸武侠</a></li>
+                <li><a href="#">高清资源</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>热门标签</h4>
+            <ul>
+                <li><a href="#">新闻女王</a></li>
+                <li><a href="#">潜行狙击</a></li>
+                <li><a href="#">溏心风暴</a></li>
+                <li><a href="#">金枝欲孽</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>联系我们</h4>
+            <ul>
+                <li><a href="#">意见反馈</a></li>
+                <li><a href="#">版权声明</a></li>
+                <li><a href="#">免责声明</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2023 香港电视剧大全. All rights reserved. 本站内容仅供学习交流，资源版权归原作者所有.
+    </div>
+</footer>
+
+</body>
+                                          </html>
