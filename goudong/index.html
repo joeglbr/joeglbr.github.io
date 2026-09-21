@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>狗洞-城市探险与地下空间发现指南</title>
+    <meta name="description" content="狗洞网专注于城市探险、地下空间探索与隐藏入口发现。提供城市探险攻略、地下通道探访指南、防空洞历史与安全注意事项，是探险爱好者与城市探索者的权威社区。">
+    <meta name="keywords" content="狗洞,城市探险,地下空间,隐藏入口,防空洞,地下通道,城市探索,探险指南">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f4f6f8;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #1a252f;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 32px;
+            opacity: 0.9;
+        }
+
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 30px;
+            border: none;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            outline: none;
+        }
+
+        .search-box button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 24px;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            color: var(--primary-color);
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            flex: 1;
+        }
+
+        .card-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .card-link:hover {
+            color: var(--accent-color);
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 60px;
+        }
+
+        .guide-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .step-item {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+
+        .step-item h4 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .step-item p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Safety Notice */
+        .safety-banner {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .safety-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            color: #95a5a6;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span>狗洞</span> 探索
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">探索地图</a></li>
+                    <li><a href="#">探险指南</a></li>
+                    <li><a href="#">社区话题</a></li>
+                    <li><a href="#">装备库</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-button">加入探险队</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>发现城市的隐形入口</h1>
+        <p>“狗洞”不仅是城市缝隙中的通道，更是连接历史与未来的隐秘路径。在这里，我们探索地下空间，记录隐藏入口，分享城市探险的独家攻略。</p>
+        <div class="search-box">
+            <input type="text" placeholder="搜索隐藏入口、防空洞、废弃地铁...">
+            <button type="button">🔍</button>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <section class="safety-banner">
+            <div class="safety-icon">⚠️</div>
+            <div>
+                <h3>安全第一：探险须知</h3>
+                <p>进入任何地下空间或未标记区域前，请务必评估风险。确保告知他人你的行程，准备必要的照明设备和通讯工具，切勿进入被标记为危险或封闭的区域。</p>
+            </div>
+        </section>
+
+        <h2 class="section-title">热门探索区域</h2>
+        <div class="grid-3">
+            <article class="card">
+                <img src="https://picsum.photos/seed/cave1/400/250" alt="城市地下通道探险" class="card-image">
+                <div class="card-content">
+                    <span class="card-tag">城市探险</span>
+                    <h3>老城地下迷宫</h3>
+                    <p>深入市中心百年前修建的地下排水与运输系统，探寻那些被遗忘的通道与历史遗迹。</p>
+                    <a href="#" class="card-link">查看详情 →</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://picsum.photos/seed/metro/400/250" alt="废弃地铁站" class="card-image">
+                <div class="card-content">
+                    <span class="card-tag">工业遗迹</span>
+                    <h3>废弃地铁站探秘</h3>
+                    <p>记录那些因城市规划变更而停运的地铁站，感受钢铁时代的工业美学与寂静。</p>
+                    <a href="#" class="card-link">查看详情 →</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://picsum.photos/seed/bunker/400/250" alt="防空洞改造" class="card-image">
+                <div class="card-content">
+                    <span class="card-tag">历史遗迹</span>
+                    <h3>二战防空洞改造</h3>
+                    <p>探访如今已转变为创意园区或艺术展览的防空洞，见证历史与当代文化的融合。</p>
+                    <a href="#" class="card-link">查看详情 →</a>
+                </div>
+            </article>
+        </div>
+
+        <h2 class="section-title">探险装备与指南</h2>
+        <div class="guide-section">
+            <h3>新手入门：必备装备清单</h3>
+            <p style="margin-top: 10px; color: var(--text-secondary);">一次成功的地下探险，离不开专业的装备支持。</p>
+            
+            <div class="guide-steps">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h4>强光手电</h4>
+                    <p>选择高流明、长续航的手电筒，并携带备用电池。地下环境光线复杂，照明是基础。</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h4>多功能刀具</h4>
+                    <p>用于应对突发情况，如切断缠绕物或开启封闭的出口。</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h4>防护手套</h4>
+                    <p>避免在攀爬或接触粗糙表面时划伤手部，防止细菌感染。</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <h4>通讯设备</h4>
+                    <p>确保手机有电，或携带对讲机以保持团队联络畅通。</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">常见问题 (FAQ)</h2>
+        <div class="grid-3" style="grid-template-columns: 1fr;">
+            <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 15px; box-shadow: var(--shadow);">
+                <h4 style="margin-bottom: 8px;">什么是“狗洞”？</h4>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">在探险术语中，“狗洞”通常指代城市中各种隐蔽的小型入口，如旧墙上的通风口、狭窄的维修通道或地下排水系统的检修井。它象征着探索那些不为人知的角落。</p>
+            </div>
+            <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 15px; box-shadow: var(--shadow);">
+                <h4 style="margin-bottom: 8px;">进入废弃建筑合法吗？</h4>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">这取决于具体地点和当地法律。未经许可进入私人领地或被封锁的军事设施属于违法行为。我们建议仅探索已被公开开放的废弃区域或公共地下空间。</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo" style="color: white; margin-bottom: 15px;">
+                    <span>狗洞</span> 探索
+                </div>
+                <p style="font-size: 0.9rem; color: #bdc3c7; line-height: 1.8;">
+                    致力于记录与分享城市中的隐藏入口与地下空间。让探索成为一种发现美的方式。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>探索指南</h4>
+                <ul>
+                    <li><a href="#">新手入门</a></li>
+                    <li><a href="#">装备推荐</a></li>
+                    <li><a href="#">安全守则</a></li>
+                    <li><a href="#">地图资源</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>社区互动</h4>
+                <ul>
+                    <li><a href="#">加入论坛</a></li>
+                    <li><a href="#">提交发现</a></li>
+                    <li><a href="#">活动招募</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系方式</h4>
+                <ul>
+                    <li><a href="#">合作建议</a></li>
+                    <li><a href="#">举报违规</a></li>
+                    <li><a href="#">订阅周刊</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 狗洞探索网. All rights reserved. 本网站内容仅供科普与探险参考。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
