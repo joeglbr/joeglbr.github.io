@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NBAQQ皮肤 - 提供腾讯NBA直播插件美化皮肤、高清赛事主题、动态特效及个性化设置，打造沉浸式观赛体验。">
+    <meta name="keywords" content="NBAQQ皮肤,腾讯NBA皮肤,直播插件美化,高清赛事皮肤,QQ皮肤,观赛主题">
+    <title>NBAQQ皮肤-腾讯NBA直播插件美化与高清主题下载</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --accent-color: #ff6600;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #ffffff;
+            --text-sub: #aaaaaa;
+            --border-color: #333333;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            color: var(--text-sub);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-main);
+        }
+
+        .search-bar {
+            display: flex;
+            background: #2a2a2a;
+            border-radius: 4px;
+            padding: 4px 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .search-bar input {
+            background: transparent;
+            border: none;
+            color: white;
+            outline: none;
+            width: 150px;
+            font-size: 14px;
+        }
+
+        .search-bar button {
+            background: transparent;
+            border: none;
+            color: var(--text-sub);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            color: var(--text-sub);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-btn:hover {
+            background-color: #0052a3;
+            transform: translateY(-2px);
+        }
+
+        /* Main Layout */
+        main {
+            padding: 40px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 24px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 16px;
+        }
+
+        .section-header h2 {
+            font-size: 24px;
+        }
+
+        .section-header p {
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        /* Skin Grid */
+        .skin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .skin-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .skin-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border-color: var(--primary-color);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 160px;
+            background-color: #2a2a2a;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .skin-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            backdrop-filter: blur(4px);
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-sub);
+            margin-bottom: 16px;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-sm {
+            flex: 1;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 13px;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #0052a3;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-sub);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+            color: var(--text-main);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--card-bg);
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+            display: inline-block;
+            background: rgba(255,255,255,0.05);
+            width: 64px;
+            height: 64px;
+            line-height: 64px;
+            border-radius: 50%;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .feature-item p {
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            margin-top: 60px;
+        }
+
+        .guide-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: flex;
+            gap: 20px;
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .step-num {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--accent-color);
+            min-width: 30px;
+        }
+
+        .step-content h4 {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .step-content p {
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        /* FAQ */
+        .faq-section {
+            margin: 60px 0;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 10px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 16px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .faq-question:hover {
+            background-color: #252525;
+        }
+
+        .faq-answer {
+            padding: 0 20px 16px;
+            color: var(--text-sub);
+            font-size: 14px;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            padding: 40px 0 20px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-brand p {
+            color: var(--text-sub);
+            font-size: 14px;
+            margin-top: 16px;
+            max-width: 300px;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .footer-col h5 {
+            margin-bottom: 16px;
+            font-size: 14px;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-sub);
+            font-size: 13px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>🏀</span> NBAQQ皮肤库
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#new">最新发布</a>
+                <a href="#hot">热门榜单</a>
+                <a href="#guide">安装教程</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索皮肤...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>打造沉浸式观赛体验</h1>
+            <p>海量高清NBAQQ皮肤主题，涵盖湖人、勇士、凯尔特人等全联盟球队风格，为您定制专属直播界面。</p>
+            <a href="#new" class="cta-btn">立即浏览皮肤</a>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- Skin Grid Section -->
+        <section id="new">
+            <div class="section-header">
+                <div>
+                    <h2>最新皮肤推荐</h2>
+                    <p>紧跟赛季潮流，为您呈现最新上线的视觉主题</p>
+                </div>
+                <a href="#" style="color:var(--primary-color); font-size:14px;">查看全部 ></a>
+            </div>
+
+            <div class="skin-grid">
+                <!-- Skin Card 1 -->
+                <article class="skin-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/nba1/400/250" alt="洛杉矶湖人紫金王朝皮肤">
+                        <span class="card-badge">热门</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">洛杉矶湖人紫金王朝</h3>
+                        <div class="card-meta">
+                            <span>版本: 3.0</span>
+                            <span>更新: 2023.10</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn-sm btn-primary">立即应用</a>
+                            <a href="#" class="btn-sm btn-outline">预览效果</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Skin Card 2 -->
+                <article class="skin-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/nba2/400/250" alt="金州勇士篮球主题皮肤">
+                        <span class="card-badge">新上架</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">金州勇士篮球主题</h3>
+                        <div class="card-meta">
+                            <span>版本: 2.8</span>
+                            <span>更新: 2023.11</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn-sm btn-primary">立即应用</a>
+                            <a href="#" class="btn-sm btn-outline">预览效果</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Skin Card 3 -->
+                <article class="skin-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/nba3/400/250" alt="迈阿密热火激情红皮肤">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">迈阿密热火激情红</h3>
+                        <div class="card-meta">
+                            <span>版本: 2.5</span>
+                            <span>更新: 2023.09</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn-sm btn-primary">立即应用</a>
+                            <a href="#" class="btn-sm btn-outline">预览效果</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Skin Card 4 -->
+                <article class="skin-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/nba4/400/250" alt="芝加哥公牛经典红黑皮肤">
+                        <span class="card-badge">经典</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">芝加哥公牛经典红黑</h3>
+                        <div class="card-meta">
+                            <span>版本: 2.1</span>
+                            <span>更新: 2023.08</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn-sm btn-primary">立即应用</a>
+                            <a href="#" class="btn-sm btn-outline">预览效果</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2>为什么要更换皮肤？</h2>
+                        <p>优化观赛体验，提升视觉舒适度</p>
+                    </div>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎨</div>
+                        <h3>个性化定制</h3>
+                        <p>告别千篇一律的默认界面，根据喜好选择球队或流行色系。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">👁️</div>
+                        <h3>高清视觉优化</h3>
+                        <p>针对高清分辨率优化UI元素，减少模糊，提升直播观看清晰度。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <h3>流畅运行体验</h3>
+                        <p>经过性能优化的皮肤代码，确保在低配置电脑上依然流畅不卡顿。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Installation Guide -->
+        <section id="guide" class="guide-section">
+            <div class="section-header">
+                <div>
+                    <h2>安装与使用指南</h2>
+                    <p>三步轻松更换您的NBAQQ皮肤</p>
+                </div>
+            </div>
+            <div class="guide-steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h4>下载皮肤文件</h4>
+                        <p>点击上方皮肤卡片中的“立即应用”按钮，或前往对应分类页面下载皮肤压缩包。</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h4>解压并覆盖文件</h4>
+                        <p>将下载的文件解压，找到腾讯NBA直播插件（QQ.exe或Nba.exe）所在目录，将皮肤文件夹内的文件复制并覆盖原文件。</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h4>启动并应用主题</h4>
+                        <p>重新启动腾讯NBA直播软件，在设置菜单的“皮肤管理”中选择对应主题即可生效。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="section-header">
+                <h2>常见问题解答</h2>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">更换皮肤后软件闪退怎么办？ <span>+</span></div>
+                <div class="faq-answer">这通常是因为皮肤文件损坏或不兼容当前版本。请尝试卸载该皮肤或下载最新版本重新安装。</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">皮肤文件在哪里下载？ <span>+</span></div>
+                <div class="faq-answer">所有皮肤文件均直接托管在服务器上，点击页面中的“立即应用”按钮即可直接获取。</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">支持哪些版本的腾讯NBA？ <span>+</span></div>
+                <div class="faq-answer">本站提供的皮肤主要支持腾讯NBA 8.0及以上版本，部分经典皮肤兼容旧版本。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">如何制作属于自己的皮肤？ <span>+</span></div>
+                <div class="faq-answer">目前本站主要提供现成皮肤分享，暂不支持用户自行上传制作。</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span>🏀</span> NBAQQ皮肤库
+                    </a>
+                    <p>专注于腾讯NBA直播插件美化与主题分享，致力于为球迷提供最佳的网络观赛视觉体验。</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h5>浏览皮肤</h5>
+                        <ul>
+                            <li><a href="#">最新发布</a></li>
+                            <li><a href="#">热门榜单</a></li>
+                            <li><a href="#">按球队分类</a></li>
+                            <li><a href="#">按风格分类</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h5>使用帮助</h5>
+                        <ul>
+                            <li><a href="#">安装教程</a></li>
+                            <li><a href="#">常见问题</a></li>
+                            <li><a href="#">版本更新日志</a></li>
+                            <li><a href="#">联系客服</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h5>关于我们</h5>
+                        <ul>
+                            <li><a href="#">网站简介</a></li>
+                            <li><a href="#">免责声明</a></li>
+                            <li><a href="#">隐私政策</a></li>
+                            <li><a href="#">友情链接</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h5>关注动态</h5>
+                        <ul>
+                            <li><a href="#">微博</a></li>
+                            <li><a href="#">微信公众号</a></li>
+                            <li><a href="#">QQ群</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 NBAQQ皮肤库. All Rights Reserved. 本站资源仅供学习交流使用，请支持正版软件。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+                
+                // Toggle icon or text if needed, simple here
+                const span = item.querySelector('span');
+                span.textContent = parent.classList.contains('active') ? '-' : '+';
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+                                             </html>
